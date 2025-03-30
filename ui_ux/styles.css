@@ -1,0 +1,53 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Cinzel', serif;
+}
+
+/* Fullscreen GIF background */
+.gif-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.gif-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures GIF covers entire screen */
+}
+
+/* Dark overlay for text contrast */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+  z-index: 0;
+}
+
+/* Hogwarts text styling */
+.hogwarts-text {
+  color: #f0c75e; /* Hogwarts gold */
+  font-size: 4rem;
+  text-align: center;
+  opacity: 0; /* Start invisible for animation */
+  text-shadow: 0 0 10px #f0c75e;
+  position: relative;
+  z-index: 1; /* Ensures text stays above background */
+  
+  /* Center text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
