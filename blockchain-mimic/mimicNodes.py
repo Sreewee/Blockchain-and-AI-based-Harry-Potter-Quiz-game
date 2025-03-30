@@ -7,11 +7,17 @@ import time
 import requests
 import uuid
 import logging
+from flask_sqlalchemy import SQLAlchemy
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger('p2p-flask')
 
 app = Flask(__name__)
+db_port = app.run_port
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///Databse/db{db_port}.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db = SQLAlchemy(app)
 
 peers = {}
 my_uuid = str(uuid.uuid4())
